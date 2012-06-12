@@ -1,0 +1,6 @@
+<%= form_for :news_subscription, :url => news_subscriptions_url, :remote => true do |f| %>
+	<%= f.text_field :email, :type => :email, :size => 28, :pattern => "[^ @]*@[^ @]*", :placeholder => 'Enter your email' %>
+	<%= f.hidden_field :kind, :value => 'newsletter' %>
+  	<%= f.submit t(:submit), :class => "button" %>
+<% end -%>
+<div style="display:none;" id="news_subscription-dialog";></div>

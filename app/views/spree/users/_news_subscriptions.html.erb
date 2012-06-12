@@ -1,0 +1,21 @@
+<h3><%= t(:my_news_subscriptions) %></h3>
+<%= form_for @user, :url => update_news_subscriptions_user_path(@user), :html => {:class => 'ajax_form', :id => 'change_news_subscriptions'} do |f| %>
+	<ul id="news_subscription_preferences">
+		<li><%= f.label :newsletter %>
+			<%= f.radio_button :preferred_newsletter_subscription, true %>&nbsp;<%= t(:yes) %>
+			<%= f.radio_button :preferred_newsletter_subscription, nil, :checked => [false, nil].include?(@user.preferred_newsletter_subscription) %>&nbsp;<%= t(:no) %>
+		</li>
+		<li><%= f.label :state_availability %>
+			<%= f.radio_button :preferred_availability_subscription, true %>&nbsp;<%= t(:yes) %>
+			<%= f.radio_button :preferred_availability_subscription, nil, :checked => [false, nil].include?(@user.preferred_availability_subscription) %>&nbsp;<%= t(:no) %>
+		</li>
+		<li><%= f.label :new_products %>
+			<%= f.radio_button :preferred_new_product_subscription, true %>&nbsp;<%= t(:yes) %>
+			<%= f.radio_button :preferred_new_product_subscription, nil, :checked => [false, nil].include?(@user.preferred_new_product_subscription) %>&nbsp;<%= t(:no) %>
+		</li>
+	</ul>
+	<br />
+	<%= f.submit 'Update', :class => 'button' %>
+<% end -%>
+
+
