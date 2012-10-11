@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_sendgrid'
-  s.version     = '0.2.0'
+  s.version     = '0.2.1'
   s.summary     = 'Spree Commerce Extensions for Sendgrid'
 
   s.author        = 'Thomas Boltze'
