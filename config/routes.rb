@@ -10,7 +10,12 @@ Spree::Core::Engine.routes.prepend do
     end
   end
   
-  namespace :admin do    
+  namespace :admin do
+    resources :users do
+      member do
+        put :update_news_subscriptions
+      end
+    end    
   end
   
 end
