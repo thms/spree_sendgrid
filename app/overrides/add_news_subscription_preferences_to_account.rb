@@ -9,3 +9,4 @@ Deface::Override.new(:virtual_path => "spree/admin/users/show",
                      :insert_bottom => "p",
                      :partial => "spree/admin/users/news_subscriptions",
                      :disabled => false)
+                     
