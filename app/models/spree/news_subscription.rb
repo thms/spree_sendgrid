@@ -5,7 +5,7 @@ module Spree
     
     # These correspond to the preferences in the user model, add _subscription to get to the preference
     KINDS = [:newsletter, :availability, :new_product]
-    attr_accessible :kind, :email, :user_id
+    attr_accessible :kind, :email, :user_id, :source
     belongs_to :user
     validates_presence_of :email
     validates_uniqueness_of :email, :scope => :kind

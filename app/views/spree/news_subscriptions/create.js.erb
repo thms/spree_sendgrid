@@ -6,10 +6,10 @@ $("#news_subscription-dialog").dialog({
 	modal: true,
 	title: "",
 	buttons: {
-	    "Close": function() { $("#news_subscription-dialog").dialog('close') },
+	    "Close": function() { $("#news_subscription-dialog").dialog('close') <%= ";document.location = '#{@redirect_to}';" unless @redirect_to.blank? %> },
 	},
 	open: function() {
-		$("#news_subscription-dialog").html("<%= escape_javascript(render('spree/shared/newsletter_subscription_dialog'))%>")
+		$("#news_subscription-dialog").html("<%= @name.blank? ? escape_javascript(render('spree/shared/newsletter_subscription_dialog')) : escape_javascript(render('spree/shared/promo_code_sent_to_friend_dialog')) %>")
 	}
 });
 

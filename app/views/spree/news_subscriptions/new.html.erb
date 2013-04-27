@@ -10,7 +10,7 @@
 			<li>Notification of Expanding Delivery Areas</li>
 		</ul>
 
-		<%= render :partial => 'spree/shared/newsletter_subscription_form' %>
+		<%= render :partial => 'spree/shared/newsletter_subscription_form', :locals => {:source => 'newsletter_page', :placeholder => 'Enter your email', :redirect_to => nil, :promo_code => nil, :ask_name => false} %>
 
 	</div>    
 	<br class="clear"/>
