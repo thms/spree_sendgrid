@@ -1,3 +1,20 @@
+<% if @promo_code == 'Holiday25' %>
+// Show dialog
+$("#news_subscription-dialog").dialog({
+	autoOpen: true,
+	height: 400,
+	width: 600,
+	modal: true,
+	title: "",
+	buttons: {
+	    "Close": function() { $("#news_subscription-dialog").dialog('close') <%= ";document.location = '#{@redirect_to}';" unless @redirect_to.blank? %> },
+	},
+	open: function() {
+		$("#news_subscription-dialog").html("<%= escape_javascript(render('spree/shared/newsletter_subscription_dialog_special'))   %>")
+	}
+});
+
+<% else %>
 // Show dialog
 $("#news_subscription-dialog").dialog({
 	autoOpen: true,
@@ -13,3 +30,4 @@ $("#news_subscription-dialog").dialog({
 	}
 });
 
+<% end %>
